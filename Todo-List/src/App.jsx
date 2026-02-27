@@ -10,14 +10,19 @@ export default function App() {
   return (
     <div className="app">
       <Header />
-      <section className="hero">
-        <MidTitle title="Organize sua vida em minutos." subtitle="Gerencie tarefas, aumente seu foco e finalize mais atividades todos os dias." buttonText="Veja Como Funciona" onClick={() => setShowCard(!showCard)} />
+      <section className={`hero ${showCard ? 'show-card' : ''}`}>
+        <div className="mid-title-container">
+          <MidTitle
+            title="Organize sua vida em minutos."
+            subtitle="Gerencie tarefas, aumente seu foco e finalize mais atividades todos os dias."
+            buttonText={!showCard ? "Veja Como Funciona" : "Recolher"}
+            onClick={() => setShowCard(!showCard)}
+          />
+        </div>
+        <div className="card-inicial-container">
+          <CardInicial />
+        </div>
       </section>
-      {showCard ? (
-        <CardInicial />
-      ) : (
-        null
-      )}
     </div>
   );
 }

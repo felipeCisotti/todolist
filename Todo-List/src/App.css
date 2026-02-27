@@ -1,5 +1,41 @@
   .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 80vh;
+    padding: 0 100px;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .mid-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .hero.show-card .mid-title-container {
+    flex: 0 0 45%;
+    transform: scale(0.98);
+  }
+
+  .card-inicial-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(100px);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .hero.show-card .card-inicial-container {
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0);
+    overflow: visible;
   }
 
   header {
@@ -37,6 +73,7 @@
     justify-content: center;
     color: white;
     height: 80vh;
+    width: 100%;
     gap: 20px;
   }
 
