@@ -1,6 +1,7 @@
 export default function MidTitle({ title, subtitle, buttonText, onClick }) {
     return (
-        <div className="mid-title">
+
+        <div className="mid-title" data-aos="fade-down">
             <h1>{title}</h1>
             <h2>{subtitle}</h2>
             {buttonText && (
