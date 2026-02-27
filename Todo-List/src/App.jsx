@@ -16,13 +16,17 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header />
+      <div className="bg-decorations">
+        <div className="gradient-blob blob-1"></div>
+        <div className="gradient-blob blob-2"></div>
+      </div>
+      <Header  />
       <section className={`hero ${showCard ? 'show-card' : ''}`}>
         <div className="mid-title-container" >
-          <MidTitle
+          <MidTitle className="mid-title-hero" 
             title="Organize sua vida em minutos."
             subtitle="Gerencie tarefas, aumente seu foco e finalize mais atividades todos os dias."
-            buttonText={!showCard ? "Veja Como Funciona" : "Recolher"}
+            buttonText={!showCard ? "Veja Como Funciona" : "Recolher Painel"}
             onClick={() => setShowCard(!showCard)}
           />
         </div>

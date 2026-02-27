@@ -71,10 +71,18 @@ export default function CardInicial() {
                     {tasks.map(task => (
                         <div key={task.id} className={`task-item ${task.completed ? 'completed' : ''}`}>
                             <div className="task-content" onClick={() => toggleTask(task.id)}>
-                                <span className="custom-checkbox">{task.completed ? '✅' : '⬜'}</span>
+                                <span className="custom-checkbox">
+                                    {task.completed ?
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        :
+                                        <div className="circle-outline"></div>
+                                    }
+                                </span>
                                 <span className={task.completed ? 'strike' : ''}>{task.text}</span>
                             </div>
-                            <button className="delete-btn" onClick={() => removeTask(task.id)}>✖</button>
+                            <button className="delete-btn" onClick={() => removeTask(task.id)}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
                         </div>
                     ))}
                 </div>
